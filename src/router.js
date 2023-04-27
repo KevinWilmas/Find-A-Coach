@@ -13,7 +13,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', redirect: '/coaches' },
-    { path: '/coaches', component: CoachesList },
+    { path: '/coaches', name: 'Coaches', component: CoachesList },
     {
       path: '/coaches/:id',
       component: CoachDetail,

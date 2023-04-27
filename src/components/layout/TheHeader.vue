@@ -4,6 +4,9 @@
       <h1>
         <router-link to="/">Find a Coach</router-link>
       </h1>
+      <router-link :to="{ name: 'Coaches' }" class="logo">
+        <img class="logoo" src="@/assets/K-logo.svg" />
+      </router-link>
       <ul>
         <li>
           <router-link to="/coaches">All Coaches</router-link>
@@ -27,15 +30,15 @@ export default {
   computed: {
     isLoggedIn() {
       return this.$store.getters.isAuthenticated;
-    }
+    },
   },
   methods: {
     logout() {
       this.$store.dispatch('logout');
       this.$router.replace('/coaches');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -54,6 +57,10 @@ header a {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
+}
+
+a:hover {
+  opacity: 0.9;
 }
 
 a:active,
@@ -96,5 +103,13 @@ header ul {
 
 li {
   margin: 0 0.5rem;
+}
+
+a.logo {
+  border: none;
+}
+
+.logoo {
+  height: 50px;
 }
 </style>
